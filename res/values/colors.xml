@@ -2,6 +2,10 @@
 <resources>
 
     <color name="primary">#cc0000</color>
-
+    <color name="primaryDark">#aa0000</color>
+    <color name="colorAccent">#e2e2e2</color>
+    <color name="textColorPrimary">#000000</color>
+    <color name="windowBackground">#ffff</color>
+    <color name="navigationBarColor">#aa0000</color>
 
 </resources>
