@@ -9,5 +9,34 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">action</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_splash_screen">splashScreen</string>
+
+
+    <string name="title_activity_log_in_screen">log_in_screen</string>
+    <string name="title_activity_sign_in">sign_in</string>
+
+
+
+    <string name="Heading">Enter Your Password Details</string>
+
+    <string name="email">Email: </string>
+    <string name="password">Password: </string>
+
+    <string name="PostLogin">Login</string>
+
+
+    <string name="Message">Current Oil Level: </string>
+
+    <string name="OilLevel">15</string>
+    <string name="gaugeLevel">0</string>
+    <string name="gaugePercent">% full.</string>
+    <string name="title_activity_gauge_view">gauge_view</string>
+
+    <string name="refresh">Refresh</string>
+
+    <string name="view_guage_button_text">View Gauge</string>
+
+    <string name="hello_world">Hello world!</string>
+
 
 </resources>
