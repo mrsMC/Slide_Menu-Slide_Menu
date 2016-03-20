@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
-
 import app.z0nen.slidemenu.R;
 
 public class splash_screen extends Activity {

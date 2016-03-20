@@ -8,20 +8,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import io.sule.gaugelibrary.GaugeView;
-import android.view.Menu;
-import android.view.MenuItem;
-import java.util.Random;
 
 /**
- * Created by Z0NEN on 10/22/2014.
+ * Created by britremel 2016
  */
 public class menu1_Fragment extends Fragment {
     private View rootview;
     String tankLevelFromLogIn;
     private TextView gaugeValue;
     private GaugeView mGaugeView;
-    private final Random RAND = new Random();
+    //private final Random RAND = new Random();
 
     @Nullable
     @Override
@@ -31,17 +29,16 @@ public class menu1_Fragment extends Fragment {
 
 
         String tankUpdate = null;
-        mGaugeView = (GaugeView) getView().findViewById(R.id.gauge_view);
+        mGaugeView = (GaugeView) rootview.findViewById(R.id.gauge_view);
+                //getView().findViewById(R.id.gauge_view);
         mTimer.start();
         Bundle bundle = getActivity().getIntent().getExtras();
 
-        gaugeValue = (TextView)getView().findViewById(R.id.textViewGaugeLevel);
+        gaugeValue = (TextView)rootview.findViewById(R.id.textViewGaugeLevel);
 
         tankLevelFromLogIn = bundle.getString(tankUpdate);
 
         gaugeValue.setText(tankLevelFromLogIn);
-
-
 
         return rootview;
     }
@@ -51,6 +48,7 @@ public class menu1_Fragment extends Fragment {
         @Override
         public void onTick(final long millisUntilFinished) {
             float tankLevel = Float.parseFloat(tankLevelFromLogIn);
+           // float tankLevel = 55;
             mGaugeView.setTargetValue(tankLevel);
         }
 

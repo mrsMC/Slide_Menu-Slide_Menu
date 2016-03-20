@@ -14,12 +14,13 @@ import android.widget.TextView;
 
 import app.z0nen.slidemenu.MyActivity;
 import app.z0nen.slidemenu.R;
+import app.z0nen.slidemenu.RegisterActivity;
 
 public class log_in_screen extends Activity {
 
     private EditText emailField, passwordField;
     private TextView oilLevel;
-    private Button viewGaugeButton;
+    private Button viewGaugeButton, regDevButton;
     String oilLevelFromDataBase;
 
 
@@ -33,6 +34,7 @@ public class log_in_screen extends Activity {
 
         oilLevel = (TextView) findViewById(R.id.textViewLevel);
         viewGaugeButton = (Button) findViewById(R.id.btnViewGauge);
+        regDevButton = (Button) findViewById(R.id.btnRegDevice);
 
         TextWatcher watcher = new TextWatcher() {
             @Override
@@ -48,6 +50,7 @@ public class log_in_screen extends Activity {
             @Override
             public void afterTextChanged(Editable editable) {
                 viewGaugeButton.setVisibility(View.VISIBLE);
+                regDevButton.setVisibility(View.VISIBLE);
             }
         };
 
@@ -75,7 +78,14 @@ public class log_in_screen extends Activity {
         startActivity(viewGaugeIntent);
         log_in_screen.this.startActivity(viewGaugeIntent);
         log_in_screen.this.finish();
+    }
 
+    public void regDevice(View view){
+
+        Intent regDev = new Intent(log_in_screen.this,RegisterActivity.class);
+        startActivity(regDev);
+        log_in_screen.this.startActivity(regDev);
+        log_in_screen.this.finish();
     }
 
     //getting value back from gauge
