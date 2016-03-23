@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import app.z0nen.slidemenu.MyActivity;
@@ -19,8 +20,9 @@ import app.z0nen.slidemenu.RegisterActivity;
 public class log_in_screen extends Activity {
 
     private EditText emailField, passwordField;
-    private TextView oilLevel;
+    private TextView oilLevel, updateDateTime;
     private Button viewGaugeButton, regDevButton;
+    private ImageView logo;
     String oilLevelFromDataBase;
 
 
@@ -33,6 +35,8 @@ public class log_in_screen extends Activity {
         passwordField = (EditText) findViewById(R.id.editTextPassword);
 
         oilLevel = (TextView) findViewById(R.id.textViewLevel);
+        updateDateTime = (TextView) findViewById(R.id.textViewUpdateDateTime);
+        logo = (ImageView) findViewById(R.id.logo);
         viewGaugeButton = (Button) findViewById(R.id.btnViewGauge);
         regDevButton = (Button) findViewById(R.id.btnRegDevice);
 
@@ -49,8 +53,11 @@ public class log_in_screen extends Activity {
 
             @Override
             public void afterTextChanged(Editable editable) {
+
+                logo.setVisibility(View.GONE);
                 viewGaugeButton.setVisibility(View.VISIBLE);
                 regDevButton.setVisibility(View.VISIBLE);
+
             }
         };
 
@@ -64,22 +71,38 @@ public class log_in_screen extends Activity {
 
         new sign_in(this, oilLevel, 1).execute(email, password);
 
-        oilLevelFromDataBase = oilLevel.getText().toString();
 
+ //is this used? ********************
+        oilLevelFromDataBase = oilLevel.getText().toString();
     }
 
+
+//when btnGaugeView is clicked
     public void viewGaugePage(View view){
 
         Intent viewGaugeIntent = new Intent(log_in_screen.this,MyActivity.class);
+        Bundle extras = new Bundle();
+       // String tankLevelFromDatabase = oilLevel.getText().toString();
+        String data = oilLevel.getText().toString();
 
-        String tankLevelFromDatabase = oilLevel.getText().toString();
-        String tankUpdate = null;
-        viewGaugeIntent.putExtra(tankUpdate, tankLevelFromDatabase);
+        String []s = data.split(";");
+
+        String tankLevelFromDatabase =s[0];
+        String readingTimeFromDatabase =s[1];
+        System.out.println(tankLevelFromDatabase);
+        System.out.println(readingTimeFromDatabase);
+
+        extras.putString("readingTime", readingTimeFromDatabase);
+        extras.putString("tankUpdate", tankLevelFromDatabase);
+
+        viewGaugeIntent.putExtras(extras);
         startActivity(viewGaugeIntent);
         log_in_screen.this.startActivity(viewGaugeIntent);
         log_in_screen.this.finish();
     }
 
+
+//when btnRegisterDevice is clicked
     public void regDevice(View view){
 
         Intent regDev = new Intent(log_in_screen.this,RegisterActivity.class);

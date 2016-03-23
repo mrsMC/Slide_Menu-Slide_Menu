@@ -1,6 +1,7 @@
 package app.z0nen.slidemenu;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
@@ -17,28 +18,37 @@ import io.sule.gaugelibrary.GaugeView;
 public class menu1_Fragment extends Fragment {
     private View rootview;
     String tankLevelFromLogIn;
+    String readingTimestamp;    //takes values from database
+
     private TextView gaugeValue;
-    private GaugeView mGaugeView;
-    //private final Random RAND = new Random();
+    private TextView timestamp; //shows reading from database on app
+
+    private GaugeView mGaugeView; //displays gauge with reading
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootview = inflater.inflate(R.layout.menu1_layout, container, false);
 
-
-
-        String tankUpdate = null;
         mGaugeView = (GaugeView) rootview.findViewById(R.id.gauge_view);
-                //getView().findViewById(R.id.gauge_view);
+
         mTimer.start();
-        Bundle bundle = getActivity().getIntent().getExtras();
 
-        gaugeValue = (TextView)rootview.findViewById(R.id.textViewGaugeLevel);
+        //create intent and bundle to call data from another activity
+        Intent intent = getActivity().getIntent();
+        Bundle extras = intent.getExtras();
+        tankLevelFromLogIn = extras.getString("tankUpdate");  //tank levels
+        readingTimestamp = extras.getString("readingTime"); //date and time of tank reading
+        //format string to display 1 decimal place
+        float number = Float.parseFloat(tankLevelFromLogIn);
+        tankLevelFromLogIn = String.format("%.1f", number);
 
-        tankLevelFromLogIn = bundle.getString(tankUpdate);
+        //assign values to Text views
+        gaugeValue = (TextView) rootview.findViewById(R.id.textViewGaugeLevel);
+        timestamp = (TextView) rootview.findViewById(R.id.textViewUpdateDateTime);
 
         gaugeValue.setText(tankLevelFromLogIn);
+        timestamp.setText(readingTimestamp);
 
         return rootview;
     }
@@ -47,12 +57,13 @@ public class menu1_Fragment extends Fragment {
 
         @Override
         public void onTick(final long millisUntilFinished) {
+            //assign oil level volume to gauge
             float tankLevel = Float.parseFloat(tankLevelFromLogIn);
-           // float tankLevel = 55;
             mGaugeView.setTargetValue(tankLevel);
         }
 
         @Override
-        public void onFinish() {}
+        public void onFinish() {
+        }
     };
 }

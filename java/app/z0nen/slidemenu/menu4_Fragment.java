@@ -66,7 +66,7 @@ public class menu4_Fragment extends Fragment {
 
         txtName = (EditText) rootView.findViewById(R.id.txtName);
         txtEmail = (EditText) rootView.findViewById(R.id.txtEmail);
-        btnRegister= (Button) rootView.findViewById(R.id.btnRegister);
+        btnRegister = (Button) rootView.findViewById(R.id.btnRegister);
 
         /*
          * Click event on Register button
@@ -82,9 +82,9 @@ public class menu4_Fragment extends Fragment {
                 // Check if user filled the form
                 if (name.trim().length() > 0 && email.trim().length() > 0) {
 
-                //Pass the context and the Activity class you need to open from the Fragment Class, to the Intent
+                    //Pass the context and the Activity class you need to open from the Fragment Class, to the Intent
 
-                // Launch Main Activity
+                    // Launch Main Activity
                     Intent i = new Intent(getActivity().getApplicationContext(), MainActivity.class);
                     startActivity(i);
                     // Registering user on our server

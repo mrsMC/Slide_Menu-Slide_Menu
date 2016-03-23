@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Fuelwatch</string>
+    <string name="app_name">FuelWatch</string>
     <string name="action_settings">Settings</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">Push Notifications</string>
@@ -31,7 +31,7 @@
     <string name="action_example">action</string>
     <string name="title_activity_splash_screen">FuelWatch</string>
     <string name="title_activity_sign_in">Log In</string>
-    <string name="title_activity_log_in_screen">Log In</string>
+    <string name="title_activity_log_in_screen">FuelWatch Log In</string>
     <string name="Heading">Enter Your Passcode</string>
     <string name="email">Email: </string>
     <string name="password">Password: </string>
@@ -40,18 +40,14 @@
     <string name="OilLevel">15</string>
     <string name="gaugeLevel">0</string>
     <string name="gaugePercent">% full.</string>
-    <string name="title_activity_gauge_view">gauge_view</string>
+    <string name="title_activity_gauge_view">Current Oil Readings</string>
     <string name="refresh">Refresh</string>
     <string name="view_gauge_button_text">View Gauge</string>
     <string name="contact_telephone_number">Contact Number</string>
     <string name="fuelwatch_website">Website</string>
     <string name="fuelwatch_email">Email Us</string>
     <string name="regDevice">Register Device for Notifications</string>
-<!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
-
-
+    <string name="logo">FuelwatchLogo</string>
 
 
 </resources>

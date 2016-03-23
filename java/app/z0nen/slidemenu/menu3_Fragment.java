@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 
 public class menu3_Fragment extends Fragment {
     View rootview;
+
     // private GoogleMap mMap;
     @Nullable
     @Override
