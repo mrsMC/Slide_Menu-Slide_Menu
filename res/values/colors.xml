@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+ <resources>
 
-    <color name="primary">#cc0000</color>
-
+    <color name="primary">#cc110f</color>
+    <color name="primaryDark">#cc060b</color>
+    <color name="colorAccent">#cc110f</color>
+    <color name="textColorPrimary">#000000</color>
+    <color name="windowBackground">#ffffff</color>
+    <color name="navigationBarColor">#cc060b</color>
 
 </resources>

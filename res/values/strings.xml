@@ -1,13 +1,53 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="app_name">Menu</string>
-    <string name="title_section1">Oil Level</string>
-    <string name="title_section2">Order</string>
-    <string name="title_section3">Contact</string>
+    <string name="app_name">FuelWatch</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Push Notifications</string>
+    <string name="error_config">Please set the %1$s constant and recompile the app.</string>
+    <string name="already_registered">Device is already registered on FuelWatch server.</string>
+    <string name="gcm_registered">From GCM: device successfully registered!</string>
+    <string name="gcm_unregistered">From GCM: device successfully unregistered!</string>
+    <string name="gcm_message">From GCM: you got message!</string>
+    <string name="gcm_error">From GCM: error (%1$s).</string>
+    <string name="gcm_recoverable_error">From GCM: recoverable error (%1$s).</string>
+    <string name="gcm_deleted">From GCM: server deleted %1$d pending messages!</string>
+    <string name="server_registering">Trying (attempt %1$d/%2$d) to register device on FuelWatch Server.</string>
+    <string name="server_registered">From FuelWatch Server: successfully added device!</string>
+    <string name="server_unregistered">From FuelWatch Server: successfully removed device!</string>
+    <string name="server_register_error">Could not register device on FuelWatch Server after %1$d attempts.</string>
+    <string name="server_unregister_error">Could not unregister device on FuelWatch Server (%1$s).</string>
+    <string name="options_register">Register</string>
+    <string name="options_unregister">Unregister</string>
+    <string name="options_clear">Clear</string>
+    <string name="options_exit">Exit</string>
+    <string name="title_activity_register">activity_register</string>
+    <string name="title_section1">View Gauge</string>
+    <string name="title_section2">Order Fuel</string>
+    <string name="title_section3">Contact Us</string>
+    <string name="title_section4">Register Your Device</string>
+    <string name="title_section5">Logs</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">action</string>
-    <string name="action_settings">Settings</string>
+    <string name="title_activity_splash_screen">FuelWatch</string>
+    <string name="title_activity_sign_in">Log In</string>
+    <string name="title_activity_log_in_screen">FuelWatch Log In</string>
+    <string name="Heading">Enter Your Passcode</string>
+    <string name="email">Email: </string>
+    <string name="password">Password: </string>
+    <string name="PostLogin">Login</string>
+    <string name="Message">Current Oil Level: </string>
+    <string name="OilLevel">15</string>
+    <string name="gaugeLevel">0</string>
+    <string name="gaugePercent">% full.</string>
+    <string name="title_activity_gauge_view">Current Oil Readings</string>
+    <string name="refresh">Refresh</string>
+    <string name="view_gauge_button_text">View Gauge</string>
+    <string name="contact_telephone_number">Contact Number</string>
+    <string name="fuelwatch_website">Website</string>
+    <string name="fuelwatch_email">Email Us</string>
+    <string name="regDevice">Register Device for Notifications</string>
+    <string name="logo">FuelwatchLogo</string>
+
 
 </resources>
